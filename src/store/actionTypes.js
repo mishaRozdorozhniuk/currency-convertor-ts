@@ -1,0 +1,1 @@
+export const SAVE_CURRENCY = 'SAVE_CURRENCY';

@@ -1,0 +1,34 @@
+.currency-form-group {
+    background: #23133e;
+    width: 180px;
+    margin: 0 auto 20px;
+    display: grid;
+    grid-template-columns: 100px 80px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+input, select {
+    background: none;
+    border:0;
+    color:#fff;
+    font-size: 13px;
+}
+
+input {
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+select {
+    padding: 15px;
+}
+
+.currency-inner {
+    display: flex;
+    padding-top: 40px;
+}
+
+.currency-title {
+    text-align: center;
+}
