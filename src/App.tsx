@@ -3,6 +3,9 @@ import React, {useState, useEffect, SetStateAction} from "react";
 import useFetch from "./components/hooks/useFetch";
 import {useDispatch} from "react-redux";
 import {saveCurrency} from "./store/action";
+import CurrencyTable from "./components/CurrencyTable/CurrencyTable";
+import Footer from "./components/Footer/Footer";
+import ExchangeArrows from './components/icons/icons8-data-transfer-100.png'
 import './App.css';
 
 const App = () => {
@@ -48,25 +51,34 @@ const App = () => {
     setCurrencyTo(currencyTo);
   }
 
+
   return (
       <>
-        <h1 className="currency-title">Конвертер валют</h1>
-        <div className="currency-inner">
-          <CurrencyInput
-              onAmountChange={handleAmount1Change}
-              onCurrencyChange={handleCurrency1Change}
-              currencies={Object.keys(rates)}
-              amount={firstValueToConvert}
-              currency={currencyFrom} />
-          <CurrencyInput
-              onAmountChange={handleAmount2Change}
-              onCurrencyChange={handleCurrency2Change}
-              currencies={Object.keys(rates)}
-              amount={secondValueToConvert}
-              currency={currencyTo} />
+        <div className="container">
+          <CurrencyTable />
+          <div className="currency-inner">
+            <CurrencyInput
+                onAmountChange={handleAmount1Change}
+                onCurrencyChange={handleCurrency1Change}
+                currencies={Object.keys(rates)}
+                amount={firstValueToConvert}
+                currency={currencyFrom}
+                currencyLabel="Change"/>
+            <img className="exchange-arrows" src={ExchangeArrows} alt="exchange-arrows"/>
+            <CurrencyInput
+                onAmountChange={handleAmount2Change}
+                onCurrencyChange={handleCurrency2Change}
+                currencies={Object.keys(rates)}
+                amount={secondValueToConvert}
+                currency={currencyTo}
+                currencyLabel="Get"/>
+          </div>
         </div>
+        <Footer />
       </>
   );
 }
 
 export default App;
+
+

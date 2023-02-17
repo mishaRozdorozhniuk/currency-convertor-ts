@@ -1,34 +1,55 @@
 .currency-form-group {
-    background: #23133e;
     width: 180px;
-    margin: 0 auto 20px;
+   margin: 0 auto 0 0;;
     display: grid;
     grid-template-columns: 100px 80px;
     padding: 8px;
     border-radius: 8px;
+    color: #000;
+}
+
+.currency-form-group:first-child {
+    margin: 0 0 0 auto;
 }
 
 input, select {
     background: none;
     border:0;
-    color:#fff;
     font-size: 13px;
+    color: #000;
+}
+
+select {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 15px;
 }
 
 input {
     padding-left: 10px;
-    font-size: 16px;
+    font-size: 17px;
+    border-bottom: 1px solid #dedede;
+    font-weight: 400;
 }
 
-select {
-    padding: 15px;
+input:focus-visible {
+    border: none
 }
 
 .currency-inner {
     display: flex;
-    padding-top: 40px;
+    padding-top: 25px;
+}
+@media screen and (max-width:470px){
+    .currency-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+    .currency-form-group, .currency-form-group:first-child {
+        margin: 0 auto;
+    }
 }
 
-.currency-title {
-    text-align: center;
+.currency-label {
+    font-size: 13px;
 }
